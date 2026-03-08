@@ -9,6 +9,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Unzip source
         run: unzip MorphPlugin-clean-2.zip
+      - name: Download LibsDisguises
+        run: |
+          mkdir -p MorphPlugin/libs
+          curl -L "https://github.com/libraryaddict/LibsDisguises/releases/download/v10.0.44/LibsDisguises-v10.0.44.jar" -o MorphPlugin/libs/LibsDisguises.jar
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
